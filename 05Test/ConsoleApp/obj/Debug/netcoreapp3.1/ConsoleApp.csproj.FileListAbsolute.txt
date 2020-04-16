@@ -25,3 +25,17 @@ D:\Study\CoreWebApi4Docker\ConsoleApp\bin\Debug\netcoreapp3.1\RabbitMQClient.dll
 D:\Study\CoreWebApi4Docker\ConsoleApp\bin\Debug\netcoreapp3.1\RabbitMQClient.pdb
 D:\Study\CoreWebApi4Docker\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CopyComplete
 D:\Study\CoreWebApi4Docker\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.dll.config
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.exe
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.dll.config
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.deps.json
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.runtimeconfig.json
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.runtimeconfig.dev.json
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.dll
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.pdb
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csprojAssemblyReference.cache
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CoreCompileInputs.cache
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfoInputs.cache
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfo.cs
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.dll
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
+D:\Study\ASP.NET\CoderH\05Test\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache

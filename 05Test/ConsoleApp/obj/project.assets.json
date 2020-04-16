@@ -5,9 +5,7 @@
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "D:\\Study\\ASP.NET\\CoderH\\05Test\\RabbitMQClient\\RabbitMQClient.csproj"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\huangxiaoping\\.nuget\\packages\\": {},
@@ -39,11 +37,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "D:\\Study\\ASP.NET\\CoderH\\05Test\\RabbitMQClient\\RabbitMQClient.csproj": {
-              "projectPath": "D:\\Study\\ASP.NET\\CoderH\\05Test\\RabbitMQClient\\RabbitMQClient.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -72,16 +66,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "找不到项目“D:\\Study\\ASP.NET\\CoderH\\05Test\\RabbitMQClient\\RabbitMQClient.csproj”。请检查项目引用是否有效以及项目文件是否存在。",
-      "libraryId": "D:\\Study\\ASP.NET\\CoderH\\05Test\\RabbitMQClient\\RabbitMQClient.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

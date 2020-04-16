@@ -6,3 +6,9 @@ D:\Study\CoreWebApi4Docker\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInp
 D:\Study\CoreWebApi4Docker\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
 D:\Study\CoreWebApi4Docker\Common\obj\Debug\netcoreapp3.1\Common.dll
 D:\Study\CoreWebApi4Docker\Common\obj\Debug\netcoreapp3.1\Common.pdb
+D:\Study\ASP.NET\CoderH\02Domain\Common\obj\Debug\netcoreapp3.1\Common.csprojAssemblyReference.cache
+D:\Study\ASP.NET\CoderH\02Domain\Common\obj\Debug\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+D:\Study\ASP.NET\CoderH\02Domain\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+D:\Study\ASP.NET\CoderH\02Domain\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
+D:\Study\ASP.NET\CoderH\02Domain\Common\obj\Debug\netcoreapp3.1\Common.dll
+D:\Study\ASP.NET\CoderH\02Domain\Common\obj\Debug\netcoreapp3.1\Common.pdb

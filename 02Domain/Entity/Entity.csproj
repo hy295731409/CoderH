@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Framework.DB\Framework.DB.csproj" />
+    <ProjectReference Include="..\..\01Framework\Framework.DB\Framework.DB.csproj" />
   </ItemGroup>
 
 </Project>

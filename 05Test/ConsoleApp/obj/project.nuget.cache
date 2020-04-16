@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7eTokMzX3/ka/DEmpUsKJa36wcwDHYayd/5wKfBuHIdD7wKcg/41SFJ09SFiRVDKmHXekfzMlY+O8oVTXS/s7g==",
-  "success": false,
+  "dgSpecHash": "KWpAaD90EZxAcYuXg7Ez53QsoMy3m99PNmxzKXJ57QLdsNVm/Dm6r9N+1vlRYl6n6kZafC7lzfrvo7DOekKh2g==",
+  "success": true,
   "projectFilePath": "D:\\Study\\ASP.NET\\CoderH\\05Test\\ConsoleApp\\ConsoleApp.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "找不到项目“D:\\Study\\ASP.NET\\CoderH\\05Test\\RabbitMQClient\\RabbitMQClient.csproj”。请检查项目引用是否有效以及项目文件是否存在。",
-      "libraryId": "D:\\Study\\ASP.NET\\CoderH\\05Test\\RabbitMQClient\\RabbitMQClient.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

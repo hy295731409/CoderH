@@ -25,3 +25,17 @@ D:\Study\ASP.NET\CoreWebApi4Docker\Domain\obj\Debug\netcoreapp3.1\Domain.Assembl
 D:\Study\ASP.NET\CoreWebApi4Docker\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CopyComplete
 D:\Study\ASP.NET\CoreWebApi4Docker\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 D:\Study\ASP.NET\CoreWebApi4Docker\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+D:\Study\ASP.NET\CoderH\02Domain\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+D:\Study\ASP.NET\CoderH\02Domain\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+D:\Study\ASP.NET\CoderH\02Domain\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+D:\Study\ASP.NET\CoderH\02Domain\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+D:\Study\ASP.NET\CoderH\02Domain\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+D:\Study\ASP.NET\CoderH\02Domain\Domain\bin\Debug\netcoreapp3.1\Entity.dll
+D:\Study\ASP.NET\CoderH\02Domain\Domain\bin\Debug\netcoreapp3.1\Framework.DB.dll
+D:\Study\ASP.NET\CoderH\02Domain\Domain\bin\Debug\netcoreapp3.1\Framework.DB.pdb
+D:\Study\ASP.NET\CoderH\02Domain\Domain\bin\Debug\netcoreapp3.1\Entity.pdb
+D:\Study\ASP.NET\CoderH\02Domain\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+D:\Study\ASP.NET\CoderH\02Domain\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+D:\Study\ASP.NET\CoderH\02Domain\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+D:\Study\ASP.NET\CoderH\02Domain\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+D:\Study\ASP.NET\CoderH\02Domain\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CopyComplete

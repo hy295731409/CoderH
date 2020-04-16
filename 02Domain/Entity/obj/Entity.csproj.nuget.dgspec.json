@@ -4,6 +4,80 @@
     "D:\\Study\\ASP.NET\\CoderH\\02Domain\\Entity\\Entity.csproj": {}
   },
   "projects": {
+    "D:\\Study\\ASP.NET\\CoderH\\01Framework\\Framework.DB\\Framework.DB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Study\\ASP.NET\\CoderH\\01Framework\\Framework.DB\\Framework.DB.csproj",
+        "projectName": "Framework.DB",
+        "projectPath": "D:\\Study\\ASP.NET\\CoderH\\01Framework\\Framework.DB\\Framework.DB.csproj",
+        "packagesPath": "C:\\Users\\huangxiaoping\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\ASP.NET\\CoderH\\01Framework\\Framework.DB\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\huangxiaoping\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://172.18.7.36/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.30, )"
+            },
+            "Dapper.Contrib.TZ": {
+              "target": "Package",
+              "version": "[2.0.30.1, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Study\\ASP.NET\\CoderH\\02Domain\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,8 +105,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Study\\ASP.NET\\CoderH\\02Domain\\Framework.DB\\Framework.DB.csproj": {
-                "projectPath": "D:\\Study\\ASP.NET\\CoderH\\02Domain\\Framework.DB\\Framework.DB.csproj"
+              "D:\\Study\\ASP.NET\\CoderH\\01Framework\\Framework.DB\\Framework.DB.csproj": {
+                "projectPath": "D:\\Study\\ASP.NET\\CoderH\\01Framework\\Framework.DB\\Framework.DB.csproj"
               }
             }
           }
