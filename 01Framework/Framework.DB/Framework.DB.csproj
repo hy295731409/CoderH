@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Utility\Extension\ExpressionEx.cs" />
+    <Compile Remove="Utility\Extension\JsonEx.cs" />
+    <Compile Remove="Utility\Extension\ListEx.cs" />
+    <Compile Remove="Utility\Extension\ObjectEx.cs" />
+    <Compile Remove="Utility\Extension\StringEx.cs" />
+    <Compile Remove="Utility\Helper\CacheHelper.cs" />
+    <Compile Remove="Utility\Helper\ConfigHelper.cs" />
+    <Compile Remove="Utility\Helper\Consts.cs" />
+    <Compile Remove="Utility\Helper\CookieHelper.cs" />
+    <Compile Remove="Utility\Helper\DomainHelper.cs" />
+    <Compile Remove="Utility\Helper\ExcelHelper.cs" />
+    <Compile Remove="Utility\Helper\FileHelper.cs" />
+    <Compile Remove="Utility\Helper\HttpHelper.cs" />
+    <Compile Remove="Utility\Helper\HttpRequestHelper.cs" />
+    <Compile Remove="Utility\Helper\PingYinHelper.cs" />
+    <Compile Remove="Utility\Helper\RequestHelper.cs" />
+    <Compile Remove="Utility\Helper\SessionHelper.cs" />
+    <Compile Remove="Utility\Helper\SignHelper.cs" />
+    <Compile Remove="Utility\Helper\ValidateCode.cs" />
+    <Compile Remove="Utility\Helper\ValidateHelper.cs" />
+    <Compile Remove="Utility\Helper\XmlHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper.Contrib" Version="2.0.30" />
+    <PackageReference Include="Dapper.Contrib.TZ" Version="2.0.30.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utility\Extension\" />
+  </ItemGroup>
+
+</Project>

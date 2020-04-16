@@ -1,0 +1,17 @@
+D:\Study\CoreWebApi4Docker\Framework.DB\bin\Debug\netcoreapp3.1\Framework.DB.deps.json
+D:\Study\CoreWebApi4Docker\Framework.DB\bin\Debug\netcoreapp3.1\Framework.DB.dll
+D:\Study\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.csprojAssemblyReference.cache
+D:\Study\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.AssemblyInfoInputs.cache
+D:\Study\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.AssemblyInfo.cs
+D:\Study\CoreWebApi4Docker\Framework.DB\bin\Debug\netcoreapp3.1\Framework.DB.pdb
+D:\Study\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.dll
+D:\Study\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\bin\Debug\netcoreapp3.1\Framework.DB.deps.json
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\bin\Debug\netcoreapp3.1\Framework.DB.dll
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\bin\Debug\netcoreapp3.1\Framework.DB.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.csprojAssemblyReference.cache
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.csproj.CoreCompileInputs.cache
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.AssemblyInfoInputs.cache
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.AssemblyInfo.cs
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.dll
+D:\Study\ASP.NET\CoreWebApi4Docker\Framework.DB\obj\Debug\netcoreapp3.1\Framework.DB.pdb

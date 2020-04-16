@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "YVJYQxJcJlb9PhM0qsvbKAK2qs+CRiOTkh945h2A90UqPqOIkwDsupguGj9uPu+xqU7++S+FEjHDPDdAwFI8tg==",
+  "success": false,
+  "projectFilePath": "D:\\Study\\ASP.NET\\CoderH\\04Api\\CoreWebApi4Docker\\CoreWebApi4Docker.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "找不到项目“D:\\Study\\ASP.NET\\CoderH\\04Api\\Domain\\Domain.csproj”。请检查项目引用是否有效以及项目文件是否存在。",
+      "libraryId": "D:\\Study\\ASP.NET\\CoderH\\04Api\\Domain\\Domain.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

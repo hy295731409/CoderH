@@ -1,0 +1,12 @@
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\NetMqDemo2.exe.config
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\NetMqDemo2.exe
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\NetMqDemo2.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\AsyncIO.dll
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\NetMQ.dll
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\AsyncIO.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\NetMQ.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\bin\Debug\NetMQ.xml
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\obj\Debug\NetMqDemo2.csproj.CopyComplete
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\obj\Debug\NetMqDemo2.exe
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\obj\Debug\NetMqDemo2.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\NetMqDemo2\obj\Debug\NetMqDemo2.csprojAssemblyReference.cache

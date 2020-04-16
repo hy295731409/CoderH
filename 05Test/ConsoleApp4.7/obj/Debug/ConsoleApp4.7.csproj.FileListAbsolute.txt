@@ -1,0 +1,16 @@
+D:\Study\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\ConsoleApp4.7.exe.config
+D:\Study\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\ConsoleApp4.7.exe
+D:\Study\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\ConsoleApp4.7.pdb
+D:\Study\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.csprojAssemblyReference.cache
+D:\Study\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.exe
+D:\Study\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\ConsoleApp4.7.exe.config
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\ConsoleApp4.7.exe
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\ConsoleApp4.7.pdb
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\Newtonsoft.Json.dll
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\bin\Debug\Newtonsoft.Json.xml
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.csprojAssemblyReference.cache
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.csproj.CoreCompileInputs.cache
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.csproj.CopyComplete
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.exe
+D:\Study\ASP.NET\CoreWebApi4Docker\ConsoleApp4.7\obj\Debug\ConsoleApp4.7.pdb

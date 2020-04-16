@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetMQ.ReactiveExtensions</name>
+    </assembly>
+    <members>
+        <member name="M:NetMQ.ReactiveExtensions.INetMqTransportShared.GetSharedPublisherSocket(System.String)">
+            <summary>
+            Intent: Get a publisher socket. If the same port is already opened, return it.
+            </summary>
+            <param name="addressZeroMq">ZeroMQ address, e.g. "tcp://127.0.0.1:56001".</param>
+            <returns>A publisher socket. If we already have one open, it will return the existing one.</returns>
+        </member>
+        <member name="M:NetMQ.ReactiveExtensions.INetMqTransportShared.GetSharedSubscriberSocket(System.String)">
+            <summary>
+            Intent: Get a subscriber socket. If the same port is already opened, return it.
+            </summary>
+            <param name="addressZeroMq">ZeroMQ address, e.g. "tcp://127.0.0.1:56001".</param>
+            <returns>A subscriber socket. If we already have one open, it will return the existing one.</returns>
+        </member>
+        <member name="T:NetMQ.ReactiveExtensions.ISubjectNetMQ`1">
+            <summary>
+            Intent: Send messages anywhere on the network using Reactive Extensions (RX). Uses NetMQ as the transport layer.
+            The API is a drop-in replacement for ISubject of T from Reactive Extensions, see
+            https://github.com/NetMQ/NetMQ.ReactiveExtensions.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:NetMQ.ReactiveExtensions.ISubjectNetMQ`1.SubscriberFilterName">
+            <summary>
+            Intent: Subscriber Filter name. Defaults to the type name T. Allows many types to get sent over the same
+            transport connection.
+            </summary>
+        </member>
+        <member name="P:NetMQ.ReactiveExtensions.ISubjectNetMQ`1.AddressZeroMq">
+            <summary>
+            Intent: The current endpoint address specified in the constructor, e.g. "tcp://127.0.0.1:56001".
+            </summary>
+        </member>
+        <member name="T:NetMQ.ReactiveExtensions.WhenToCreateNetworkConnection">
+            <summary>
+            Intent: Control when the network connection is created.
+            </summary>
+        </member>
+        <member name="F:NetMQ.ReactiveExtensions.WhenToCreateNetworkConnection.LazyConnectOnFirstUse">
+            <summary>
+            Intent: Default mode. The network connection is lazily created on first use.
+            </summary>
+        </member>
+        <member name="F:NetMQ.ReactiveExtensions.WhenToCreateNetworkConnection.SetupPublisherTransportNow">
+            <summary>
+            Intent: Bind to the publisher right now.
+            </summary>
+        </member>
+        <member name="F:NetMQ.ReactiveExtensions.WhenToCreateNetworkConnection.SetupSubscriberTransportNow">
+            <summary>
+            Intent: Connect to the subscriber right now.
+            </summary>
+        </member>
+        <member name="T:NetMQ.ReactiveExtensions.PublisherNetMq`1">
+            <summary>
+            Intent: Publisher.
+            </summary>
+        </member>
+        <member name="M:NetMQ.ReactiveExtensions.PublisherNetMq`1.#ctor(System.String,System.String,NetMQ.ReactiveExtensions.WhenToCreateNetworkConnection,System.Threading.CancellationTokenSource,System.Action{System.String})">
+             <summary>
+            	Intent: Create a new publisher, using NetMQ as the transport layer.
+             </summary>
+            <param name="addressZeroMq">ZeroMq address to bind to, e.g. "tcp://localhost:56001</param>
+            <param name="subscriberFilterName">Filter name on receiver. If you do not set this, it will default to the
+                type name of T, and everything will just work.</param>
+            <param name="whenToCreateNetworkConnection"></param>
+            <param name="cancellationTokenSource"></param>
+            <param name="loggerDelegate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NetMQ.ReactiveExtensions.SerializeAnException">
+            <summary>
+            Intent: Allow us to serialize an exception (ProtoBuf currently does not support this). See
+            http://stackoverflow.com/questions/94488/what-is-the-correct-way-to-make-a-custom-net-exception-serializable. 
+            </summary>
+        </member>
+        <member name="T:NetMQ.ReactiveExtensions.SerializeViaProtoBuf">
+            <summary>
+            Intent: Allow us to serialize using ProtoBuf.
+            </summary>
+        </member>
+        <member name="T:NetMQ.ReactiveExtensions.NetMqTransportShared">
+            <summary>
+            	Intent: We want to have one transport shared among all publishers and subscribers, in this process, if they
+                happen to use the same TCP/IP port.
+            </summary>
+        </member>
+        <member name="P:NetMQ.ReactiveExtensions.NetMqTransportShared.HighwaterMark">
+            <summary>
+            	Intent: Default amount of messages to queue in memory before discarding more.
+            </summary>
+        </member>
+        <member name="M:NetMQ.ReactiveExtensions.NetMqTransportShared.Instance(System.Action{System.String})">
+            <summary>
+            Intent: Singleton.
+            </summary>
+        </member>
+        <member name="M:NetMQ.ReactiveExtensions.NetMqTransportShared.GetSharedPublisherSocket(System.String)">
+            <summary>
+            Intent: See interface.
+            </summary>
+        </member>
+        <member name="M:NetMQ.ReactiveExtensions.NetMqTransportShared.GetSharedSubscriberSocket(System.String)">
+            <summary>
+            Intent: See interface.
+            </summary>		
+        </member>
+        <member name="T:NetMQ.ReactiveExtensions.SubscriberNetMq`1">
+            <summary>
+            Intent: Create a new subscriber of type T, using NetMQ as the transport layer.
+            </summary>
+            <typeparam name="T">Type we want to create to.</typeparam>
+        </member>
+        <member name="M:NetMQ.ReactiveExtensions.SubscriberNetMq`1.#ctor(System.String,System.String,NetMQ.ReactiveExtensions.WhenToCreateNetworkConnection,System.Threading.CancellationTokenSource,System.Action{System.String})">
+            <summary>
+            Intent: Create a new subscriber, using NetMQ as the transport layer.
+            </summary>
+            <param name="addressZeroMq">ZeroMq address to bind to, e.g. "tcp://localhost:56001".</param>
+            <param name="subscriberFilterName">Filter name on receiver. If you do not set this, it will default to the
+            type name of T, and everything will just work.</param>
+            <param name="whenToCreateNetworkConnection">When to create the network connection.</param>
+            <param name="cancellationTokenSource">Allows graceful termination of all internal threads associated with this subject.</param>
+            <param name="loggerDelegate">(optional) If we want to look at messages generated within this class, specify a logger here.</param>
+        </member>
+        <member name="M:NetMQ.ReactiveExtensions.SubscriberNetMq`1.Subscribe(System.IObserver{`0})">
+            <summary>
+            Intent: Exactly the same as "Subscribe" in Reactive Extensions (RX).
+            </summary>
+            <param name="observer"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

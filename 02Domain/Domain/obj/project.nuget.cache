@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "UepEmGdJBU+3/UU2n11VVAKFsk+Fw11Aq1MLwrVIdd2V5hu1jlL5Gegw7DS/S/tIaM+22LlWEPWDL4rJbsh6vQ==",
+  "success": false,
+  "projectFilePath": "D:\\Study\\ASP.NET\\CoderH\\02Domain\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "找不到项目“D:\\Study\\ASP.NET\\CoderH\\02Domain\\Framework.DB\\Framework.DB.csproj”。请检查项目引用是否有效以及项目文件是否存在。",
+      "libraryId": "D:\\Study\\ASP.NET\\CoderH\\02Domain\\Framework.DB\\Framework.DB.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
