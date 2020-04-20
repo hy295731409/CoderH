@@ -4,5 +4,24 @@
         <name>CoreWebApi4Docker</name>
     </assembly>
     <members>
+        <member name="T:CoreWebApi4Docker.Controllers.WeatherForecastController">
+            <summary>
+            天气controller
+            </summary>
+        </member>
+        <member name="M:CoreWebApi4Docker.Controllers.WeatherForecastController.Get(Domain.Object.WeatherForecast.TestInput)">
+            <summary>
+            获取天气
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreWebApi4Docker.Controllers.WeatherForecastController.Add(Domain.Object.WeatherForecast.TestInput)">
+            <summary>
+            添加天气信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

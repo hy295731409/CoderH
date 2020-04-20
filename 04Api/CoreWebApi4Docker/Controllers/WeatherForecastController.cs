@@ -11,6 +11,9 @@ using Microsoft.Extensions.Logging;
 
 namespace CoreWebApi4Docker.Controllers
 {
+    /// <summary>
+    /// 天气controller
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -21,9 +24,24 @@ namespace CoreWebApi4Docker.Controllers
             _service = service;
         }
 
-
+        /// <summary>
+        /// 获取天气
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [HttpGet]
         public Result<List<WeatherForecastOutput>> Get([FromForm]TestInput input)
+        {
+            return _service.Test(input);
+        }
+
+        /// <summary>
+        /// 添加天气信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public Result<List<WeatherForecastOutput>> Add([FromBody]TestInput input)
         {
             return _service.Test(input);
         }

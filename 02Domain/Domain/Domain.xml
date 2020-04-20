@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Domain</name>
+    </assembly>
+    <members>
+        <member name="P:Domain.Object.WeatherForecast.TestInput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Domain.Object.WeatherForecast.TestInput.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:Domain.Object.WeatherForecast.TestInput.Sons">
+            <summary>
+            孩子
+            </summary>
+        </member>
+        <member name="P:Domain.Object.WeatherForecast.WeatherForecastOutput.TemperatureC">
+            <summary>
+            温度（摄氏度）
+            </summary>
+        </member>
+        <member name="P:Domain.Object.WeatherForecast.WeatherForecastOutput.TemperatureF">
+            <summary>
+            温度（华氏度）
+            </summary>
+        </member>
+        <member name="P:Domain.Object.WeatherForecast.WeatherForecastOutput.Summary">
+            <summary>
+            描述
+            </summary>
+        </member>
+    </members>
+</doc>
