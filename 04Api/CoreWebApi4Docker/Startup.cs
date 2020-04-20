@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain.Implement;
@@ -30,6 +31,23 @@ namespace CoreWebApi4Docker
         {
             services.AddControllers();
             services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+
+            services.AddSwaggerGen(option =>
+            {
+                option.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
+                {
+                    Version = "v1",
+                    Title = "APIÎÄµµ"
+                });
+                option.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo()
+                {
+                    Version = "v2",
+                    Title = "APIÎÄµµ"
+                });
+                var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+                var xmlPath = Path.Combine(basePath, "CoreWebApi4Docker.xml");
+                option.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +78,12 @@ namespace CoreWebApi4Docker
                 //    );
             });
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1 docs");
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "v2 docs");
+            });
         }
     }
 }

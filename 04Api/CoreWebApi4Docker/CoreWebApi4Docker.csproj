@@ -5,6 +5,14 @@
     <AspNetCoreHostingModel>OutProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Study\ASP.NET\CoderH\04Api\CoreWebApi4Docker\CoreWebApi4Docker.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.2" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\02Domain\Domain\Domain.csproj" />
   </ItemGroup>
