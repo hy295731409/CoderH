@@ -1,8 +1,0 @@
-D:\Study\CoreWebApi4Docker\Framework.DB\bin\Release\netcoreapp3.1\Framework.DB.deps.json
-D:\Study\CoreWebApi4Docker\Framework.DB\bin\Release\netcoreapp3.1\Framework.DB.dll
-D:\Study\CoreWebApi4Docker\Framework.DB\bin\Release\netcoreapp3.1\Framework.DB.pdb
-D:\Study\CoreWebApi4Docker\Framework.DB\obj\Release\netcoreapp3.1\Framework.DB.AssemblyInfoInputs.cache
-D:\Study\CoreWebApi4Docker\Framework.DB\obj\Release\netcoreapp3.1\Framework.DB.AssemblyInfo.cs
-D:\Study\CoreWebApi4Docker\Framework.DB\obj\Release\netcoreapp3.1\Framework.DB.dll
-D:\Study\CoreWebApi4Docker\Framework.DB\obj\Release\netcoreapp3.1\Framework.DB.pdb
-D:\Study\CoreWebApi4Docker\Framework.DB\obj\Release\netcoreapp3.1\Framework.DB.csprojAssemblyReference.cache
