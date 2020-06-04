@@ -13,8 +13,8 @@ namespace CoreWebApi4Docker.Controllers
 {
     public class ApiControllerBase : ControllerBase
     {
-        protected string token { get; private set; }
         #region 方式1（待确认）
+        //protected string token { get; private set; }
         //public ApiControllerBase()
         //{
         //    HttpContext.Request.Headers.TryGetValue("Authorization", out var _token);
