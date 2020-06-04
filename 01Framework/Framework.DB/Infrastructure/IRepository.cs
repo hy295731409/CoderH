@@ -44,8 +44,8 @@ namespace Framework.DB.Infrastructure
 
         void Transaction(Action<IDbTransaction> action);
         int SqlExecute(string sql, Parameters parameters = null, IDbTransaction transaction = null);
-        TEntity QueryFirstOrDefault<TEntity>(string sql, Parameters parameters = null, IDbTransaction transaction = null);
-        IEnumerable<TEntity> SqlQuery<TEntity>(string sql, Parameters parameters = null, IDbTransaction transaction = null);
+        T QueryFirstOrDefault<T>(string sql, Parameters parameters = null, IDbTransaction transaction = null);
+        IEnumerable<T> SqlQuery<T>(string sql, Parameters parameters = null, IDbTransaction transaction = null);
 
         #region 分页
         PagedList<T> Page<T>(int pageSize, int pageIndex, string whereSql, string sortBy, Dictionary<string, object> dicParms, IDbTransaction transaction = null) where T : class;

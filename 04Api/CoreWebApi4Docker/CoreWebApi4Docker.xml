@@ -4,6 +4,14 @@
         <name>CoreWebApi4Docker</name>
     </assembly>
     <members>
+        <member name="M:CoreWebApi4Docker.Controllers.AuthController.GetUserToken(System.String,System.String)">
+            <summary>
+            获取用户的token
+            </summary>
+            <param name="name">用户名称</param>
+            <param name="role">用户角色</param>
+            <returns>返回token，不能通过限定role ！= 当前role的验证</returns>
+        </member>
         <member name="T:CoreWebApi4Docker.Controllers.WeatherForecastController">
             <summary>
             天气controller
@@ -11,7 +19,7 @@
         </member>
         <member name="M:CoreWebApi4Docker.Controllers.WeatherForecastController.Get(Domain.Object.WeatherForecast.TestInput)">
             <summary>
-            获取天气
+            获取天气(只有角色为Testuser的用户能访问)
             </summary>
             <param name="input"></param>
             <returns></returns>
@@ -22,6 +30,12 @@
             </summary>
             <param name="input"></param>
             <returns></returns>
+        </member>
+        <member name="M:CoreWebApi4Docker.Startup.RegisterSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            注册swagger
+            </summary>
+            <param name="services"></param>
         </member>
     </members>
 </doc>

@@ -4,6 +4,11 @@
         <name>Domain</name>
     </assembly>
     <members>
+        <member name="P:Domain.Object.Auth.RefreshToken.refreshToken">
+            <summary>
+            自定义的固定值
+            </summary>
+        </member>
         <member name="P:Domain.Object.WeatherForecast.TestInput.Name">
             <summary>
             名称

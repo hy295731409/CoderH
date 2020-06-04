@@ -19,10 +19,12 @@ namespace ConsoleApp
             PrintFruit(list);
 
             IEnumerable<Fruit> fruits = new List<Apple>() { new Apple() };
+            //List<Fruit> f = new List<Apple>();
             Print(fruits);
 
             //逆变：让ITest<Apple> test = new Test<Fruit>();这类代码成立！
             ITest2<Apple> test = new Test2<Fruit>();
+            
             test.Set(new Apple());
 
             Console.ReadLine();
@@ -38,8 +40,12 @@ namespace ConsoleApp
         }
     }
 
-    
-
-
-
+    public class Fruit
+    {
+        public string Name = "Fruit";
+    }
+    public class Apple : Fruit
+    {
+        public Apple() => this.Name = "Apple";
+    }
 }

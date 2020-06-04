@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Domain.Implement;
 using Domain.Interface;
+using Domain.Object.Auth;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,6 +17,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace CoreWebApi4Docker
 {
@@ -32,6 +37,26 @@ namespace CoreWebApi4Docker
             services.AddControllers();
             services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(option =>
+                {
+                    //限定认证操作是否必须通过https来做
+                    option.RequireHttpsMetadata = false;
+                    //决定token在认证完成后，是否需要保持到上下文里并向后传
+                    option.SaveToken = true;
+                    var token = Configuration.GetSection("tokenParameter").Get<TokenParameter>();
+                    option.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(token.Secret)),
+                        ValidIssuer = token.Issuer,
+                        ValidateIssuer = true,
+                        ValidateAudience = false,
+                        //如果token的过期时间设置得小于5分钟，想要让认证对这个时间生效，需加上下面这一行
+                        //ClockSkew = TimeSpan.Zero
+                    };
+                });
+
             RegisterSwagger(services);
         }
 
@@ -42,12 +67,17 @@ namespace CoreWebApi4Docker
             {
                 app.UseDeveloperExceptionPage();
             }
+            //中间件（短路）
             //app.Run(async (context) =>
             //{
             //    await context.Response.WriteAsync(Process.GetCurrentProcess().ProcessName);
             //});
+
             app.UseRouting();
 
+            //先身份验证（控制器打[Authorize]）
+            app.UseAuthentication();
+            //后授权
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -95,6 +125,31 @@ namespace CoreWebApi4Docker
 
                 var xmlPath2 = Path.Combine(basePath, "Domain.xml");
                 option.IncludeXmlComments(xmlPath2);
+
+                //配置swagger支持JWT
+                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = ""
+                });
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
             });
         }
     }

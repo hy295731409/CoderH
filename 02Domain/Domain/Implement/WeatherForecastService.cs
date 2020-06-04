@@ -20,7 +20,7 @@ namespace Domain.Implement
         {
 			try
 			{
-				throw new Exception("test");
+				//throw new Exception("test");
 				return Result<List<WeatherForecastOutput>>.Success();
 			}
 			catch (Exception e)

@@ -6,6 +6,7 @@ using Domain.Implement;
 using Domain.Interface;
 using Domain.Object.WeatherForecast;
 using Framework.DB.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -16,7 +17,7 @@ namespace CoreWebApi4Docker.Controllers
     /// </summary>
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : ApiControllerBase
     {
         private readonly IWeatherForecastService _service;
         public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForecastService service)
@@ -25,13 +26,16 @@ namespace CoreWebApi4Docker.Controllers
         }
 
         /// <summary>
-        /// 获取天气
+        /// 获取天气(只有角色为Testuser的用户能访问)
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpGet]
+        [Authorize(Roles ="TestUser")]
         public Result<List<WeatherForecastOutput>> Get([FromForm]TestInput input)
         {
+            var data = CurrentUser;
+            
             return _service.Test(input);
         }
 
