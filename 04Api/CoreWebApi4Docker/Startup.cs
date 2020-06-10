@@ -60,19 +60,20 @@ namespace CoreWebApi4Docker
                     };
                 });
 
-            //自带的DI
+           
+            
+            RegisterSwagger(services);
+
+            #region 自带的DI
             //• 瞬时（Transient） 对象总是不同的；向每一个控制器和每一个服务提供了一个新的实例
             //services.AddTransient<IWeatherForecastService, WeatherForecastService>();
             //• 作用域（Scoped） 对象在一次请求中是相同的，但在不同请求中是不同的
             //services.AddScoped<IWeatherForecastService, WeatherForecastService>();
             //• 单例（Singleton） 对象对每个对象和每个请求是相同的（无论是否在 ConfigureServices 中提供实例）
-            //services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
-           
-            
-            RegisterSwagger(services);
+            //services.AddSingleton<IWeatherForecastService, WeatherForecastService>(); 
+            #endregion
 
-
-            #region core 2.x
+            #region core 2.x 使用autofac
             ////创建 Autofac 容器
             //var containerBuilder = new ContainerBuilder();
             //containerBuilder.Populate(services);
@@ -177,7 +178,10 @@ namespace CoreWebApi4Docker
             });
         }
 
-
+        /// <summary>
+        /// core3.x 使用autofac注入
+        /// </summary>
+        /// <param name="builder"></param>
         public void ConfigureContainer(ContainerBuilder builder)
         {
             //单个指定注册
