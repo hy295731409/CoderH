@@ -4,6 +4,19 @@
         <name>CoreWebApi4Docker</name>
     </assembly>
     <members>
+        <!-- Badly formed XML comment ignored for member "F:CoreWebApi4Docker.Const.SecurityKey" -->
+        <member name="F:CoreWebApi4Docker.Const.Domain">
+            <summary>
+            站点地址
+            </summary>
+        </member>
+        <member name="F:CoreWebApi4Docker.Const.ValidAudience">
+            <summary>
+            受理人，之所以弄成可变的是为了用接口动态更改这个值以模拟强制Token失效
+            真实业务场景可以在数据库或者redis存一个和用户id相关的值，生成token和验证token的时候获取到持久化的值去校验
+            如果重新登陆，则刷新这个值
+            </summary>
+        </member>
         <member name="M:CoreWebApi4Docker.Controllers.AuthController.GetUserToken(System.String,System.String)">
             <summary>
             获取用户的token
@@ -11,6 +24,19 @@
             <param name="name">用户名称</param>
             <param name="role">用户角色</param>
             <returns>返回token，不能通过限定role ！= 当前role的验证</returns>
+        </member>
+        <member name="M:CoreWebApi4Docker.Controllers.AuthController.Get(System.String,System.String)">
+            <summary>
+            login
+            </summary>
+            <param name="userName">只能用user或者</param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreWebApi4Docker.Controllers.AuthController.CheckAccount(System.String,System.String,System.String@)">
+            <summary>
+            模拟登陆校验
+            </summary>
         </member>
         <member name="T:CoreWebApi4Docker.Controllers.WeatherForecastController">
             <summary>
@@ -31,11 +57,50 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="T:CoreWebApi4Docker.Handler.PolicyHandler">
+            <summary>
+            自定义认证策略
+            </summary>
+        </member>
+        <member name="M:CoreWebApi4Docker.Handler.PolicyHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,CoreWebApi4Docker.Handler.PolicyRequirement)">
+            <summary>
+            依赖注入获取context,次方法是jwt认证的开端，重写后原来那套就不会走了
+            </summary>
+            <param name="context"></param>
+            <param name="requirement"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CoreWebApi4Docker.Handler.PolicyRequirement">
+            <summary>
+            Rights-carrying entity
+            </summary>
+        </member>
+        <member name="P:CoreWebApi4Docker.Handler.PolicyRequirement.UserPermissions">
+            <summary>
+            User rights collection
+            </summary>
+        </member>
+        <member name="P:CoreWebApi4Docker.Handler.PolicyRequirement.DeniedAction">
+            <summary>
+            No permission action
+            </summary>
+        </member>
+        <member name="M:CoreWebApi4Docker.Handler.PolicyRequirement.#ctor">
+            <summary>
+            structure
+            </summary>
+        </member>
         <member name="M:CoreWebApi4Docker.Startup.RegisterSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             注册swagger
             </summary>
             <param name="services"></param>
+        </member>
+        <member name="M:CoreWebApi4Docker.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            core3.x 使用autofac注入
+            </summary>
+            <param name="builder"></param>
         </member>
     </members>
 </doc>

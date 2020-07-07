@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using CoreWebApi4Docker.Handler;
 using Domain.Implement;
 using Domain.Interface;
 using Domain.Object.Auth;
 using Framework.DB.Base;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -40,28 +42,114 @@ namespace CoreWebApi4Docker
         {
             services.AddControllers();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(option =>
-                {
-                    //限定认证操作是否必须通过https来做
-                    option.RequireHttpsMetadata = false;
-                    //决定token在认证完成后，是否需要保持到上下文里并向后传
-                    option.SaveToken = true;
-                    var token = Configuration.GetSection("tokenParameter").Get<TokenParameter>();
-                    option.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(token.Secret)),
-                        ValidIssuer = token.Issuer,
-                        ValidateIssuer = true,
-                        ValidateAudience = false,
-                        //如果token的过期时间设置得小于5分钟，想要让认证对这个时间生效，需加上下面这一行
-                        //ClockSkew = TimeSpan.Zero
-                    };
-                });
+            //①自带jwt鉴权
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddJwtBearer(option =>
+            //    {
+            //        //限定认证操作是否必须通过https来做
+            //        option.RequireHttpsMetadata = false;
+            //        //决定token在认证完成后，是否需要保持到上下文里并向后传
+            //        option.SaveToken = true;
+            //        var token = Configuration.GetSection("tokenParameter").Get<TokenParameter>();
+            //        option.TokenValidationParameters = new TokenValidationParameters
+            //        {
+            //            ValidateIssuerSigningKey = true,
+            //            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(token.Secret)),
+            //            ValidIssuer = token.Issuer,
+            //            ValidateIssuer = true,
+            //            ValidateAudience = false,
+            //            //如果token的过期时间设置得小于5分钟，想要让认证对这个时间生效，需加上下面这一行
+            //            //ClockSkew = TimeSpan.Zero
+            //        };
+            //    });
 
-           
-            
+
+            //②添加策略鉴权模式
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Permission", policy => policy.Requirements.Add(new PolicyRequirement()));
+            })
+            .AddAuthentication(s =>
+            {
+                //添加JWT Scheme
+                s.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                s.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                s.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            //添加jwt验证：
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateLifetime = true,//是否验证失效时间
+                    ClockSkew = TimeSpan.FromSeconds(30),
+
+                    ValidateAudience = true,//是否验证Audience
+                    //ValidAudience = Const.GetValidudience(),//Audience
+                    //这里采用动态验证的方式，在重新登陆时，刷新token，旧token就强制失效了
+                    AudienceValidator = (m, n, z) =>
+                    {
+                        return m != null && m.FirstOrDefault().Equals(Const.ValidAudience);
+                    },
+                    ValidateIssuer = true,//是否验证Issuer
+                    ValidIssuer = Const.Domain,//Issuer，这两项和前面签发jwt的设置一致
+
+                    ValidateIssuerSigningKey = true,//是否验证SecurityKey
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Const.SecurityKey))//拿到SecurityKey
+                };
+                options.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = context =>
+                    {
+                        //Token expired
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.Headers.Add("Token-Expired", "true");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo
+            //    {
+            //        Version = "v1",
+            //        Title = "HaoZi JWT",
+            //        Description = "基于.NET Core 3.0 的JWT 身份验证",
+            //        Contact = new OpenApiContact
+            //        {
+            //            Name = "zaranet",
+            //            Email = "zaranet@163.com",
+            //            Url = new Uri("http://cnblogs.com/zaranet"),
+            //        },
+            //    });
+            //    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            //    {
+            //        Description = "在下框中输入请求头中需要添加Jwt授权Token：Bearer Token",
+            //        Name = "Authorization",
+            //        In = ParameterLocation.Header,
+            //        Type = SecuritySchemeType.ApiKey,
+            //        BearerFormat = "JWT",
+            //        Scheme = "Bearer"
+            //    });
+            //    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            //    {
+            //        {
+            //            new OpenApiSecurityScheme
+            //            {
+            //                Reference = new OpenApiReference {
+            //                    Type = ReferenceType.SecurityScheme,
+            //                    Id = "Bearer"
+            //                }
+            //            },
+            //            new string[] { }
+            //        }
+            //    });
+            //});
+            //认证服务
+            services.AddSingleton<IAuthorizationHandler, PolicyHandler>();
+
             RegisterSwagger(services);
 
             #region 自带的DI
