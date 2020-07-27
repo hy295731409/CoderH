@@ -14,19 +14,22 @@ namespace ConsoleApp
     {
         public static void Main(string[] args)
         {
-            //协变：让ITest<Fruit> list = new Test<Apple>();这类代码成立！
-            ITest<Fruit> list = new Test<Apple>();
-            PrintFruit(list);
+            ////协变：让ITest<Fruit> list = new Test<Apple>();这类代码成立！
+            //ITest<Fruit> list = new Test<Apple>();
+            //PrintFruit(list);
 
-            IEnumerable<Fruit> fruits = new List<Apple>() { new Apple() };
-            //List<Fruit> f = new List<Apple>();
-            Print(fruits);
+            //IEnumerable<Fruit> fruits = new List<Apple>() { new Apple() };
+            ////List<Fruit> f = new List<Apple>();
+            //Print(fruits);
 
-            //逆变：让ITest<Apple> test = new Test<Fruit>();这类代码成立！
-            ITest2<Apple> test = new Test2<Fruit>();
-            
-            test.Set(new Apple());
+            ////逆变：让ITest<Apple> test = new Test<Fruit>();这类代码成立！
+            //ITest2<Apple> test = new Test2<Fruit>();
 
+            //test.Set(new Apple());
+            decimal d = 56 / 200;
+            var coeval = Math.Round(d, 7);
+
+            var res = string.Compare("12504028011B", "12504028011b", false);
             Console.ReadLine();
         }
 
