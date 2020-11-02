@@ -109,8 +109,8 @@ namespace ConsoleApp4._7
             en.Out_DiagNosis = "肺恶性肿瘤(好转),腺癌NOS";
 
             //检验结果
-            var strArr = new[] 
-            { 
+            var strArr = new[]
+            {
                 "{\"20130501\":\"73 ↑, 79 ↑\",\"20130502\":\"23, 25\",\"20130503\":\"33\",\"20130520\":\"51 ↑\",\"labresultcode\":\"ALT谷丙转氨酶0～40U / L\",\"labcode\":\"ALT谷丙转氨酶0～40U / L\",\"itemcode\":\"ALT\",\"labname\":\"滴虫培养, 血常规\",\"itemname\":\"谷丙转氨酶\",\"rangeunit\":\"0～40\",\"unit\":\"U/L\"}" ,
                 "{\"20130501\":\"72 ↑, 76 ↑\",\"20130502\":\"22, 22\",\"20130503\":\"30\",\"20130520\":\"55 ↑\",\"labresultcode\":\"ALT谷丙转氨酶0～40U / L\",\"labcode\":\"ALT谷丙转氨酶0～40U / L\",\"itemcode\":\"ALT\",\"labname\":\"滴虫培养, 血常规\",\"itemname\":\"谷丙转氨酶\",\"rangeunit\":\"0～40\",\"unit\":\"U/L\"}" ,
             };
@@ -239,14 +239,14 @@ namespace ConsoleApp4._7
             en.OtherMainDrugSummary = "其他主要治疗药物分析";
 
             //药物治疗日志
-             var log1 = new TreatmentLog
-                {
-                    date = "2014-05-04",
-                    DrugHistory = "药程记录分析",
-                    Mark = "1",
-                    new_mark = "1",
-                    stop_mark = "1",
-                    drugnew = new List<LogDrug>()
+            var log1 = new TreatmentLog
+            {
+                date = "2014-05-04",
+                DrugHistory = "药程记录分析",
+                Mark = "1",
+                new_mark = "1",
+                stop_mark = "1",
+                drugnew = new List<LogDrug>()
                     {
                         new LogDrug
                         {
@@ -285,7 +285,7 @@ namespace ConsoleApp4._7
                             StartDate = "2014-07-18 23:09:19"
                         }
                     },
-                    drugStop = new List<LogDrug>()
+                drugStop = new List<LogDrug>()
                     {
                         new LogDrug
                         {
@@ -325,7 +325,7 @@ namespace ConsoleApp4._7
                         }
                     },
 
-                };
+            };
             var log2 = new TreatmentLog
             {
                 date = "2014-05-14",
@@ -513,18 +513,29 @@ namespace ConsoleApp4._7
             var str = JsonConvert.SerializeObject(en);
             #endregion
 
-            var taskFactory = new TaskFactory();
-            Console.WriteLine($"threadId1=" + Thread.CurrentThread.ManagedThreadId);
-            taskFactory.StartNew(() => 
-            {
-                Console.WriteLine($"threadId2=" + Thread.CurrentThread.ManagedThreadId);
-                Demo1.GetResAsync("test");
-                Console.WriteLine($"threadId3=" + Thread.CurrentThread.ManagedThreadId);
-            });
-            Console.WriteLine($"threadId4=" + Thread.CurrentThread.ManagedThreadId);
+            //var taskFactory = new TaskFactory();
+            //Console.WriteLine($"threadId1=" + Thread.CurrentThread.ManagedThreadId);
+            //taskFactory.StartNew(() => 
+            //{
+            //    Console.WriteLine($"threadId2=" + Thread.CurrentThread.ManagedThreadId);
+            //    Demo1.GetResAsync("test");
+            //    Console.WriteLine($"threadId3=" + Thread.CurrentThread.ManagedThreadId);
+            //});
+            //Console.WriteLine($"threadId4=" + Thread.CurrentThread.ManagedThreadId);
+
+            //var listP = new List<Person>();
+            //var p1 = new Person();
+            //listP.Add(p1);
+            //var p2 = new Person();
+            //Console.WriteLine(listP.Contains(p2));
+            //Console.WriteLine(p1.IsEqual(p2));
+
+            deadlock.Test();
 
             Console.WriteLine();
             Console.ReadKey();
         }
+
+        
     }
 }

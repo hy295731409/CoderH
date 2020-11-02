@@ -1,4 +1,5 @@
 ﻿using AccessWinform;
+using ConsoleApp.String;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,11 @@ namespace ConsoleApp
             //ITest2<Apple> test = new Test2<Fruit>();
 
             //test.Set(new Apple());
-            decimal d = 56 / 200;
-            var coeval = Math.Round(d, 7);
 
-            var res = string.Compare("12504028011B", "12504028011b", false);
+            new StringMemoryResearch().StringTest();
+
+            Console.WriteLine(default(indGroup));
+       
             Console.ReadLine();
         }
 
@@ -41,6 +43,11 @@ namespace ConsoleApp
         {
             test.ToList().ForEach(i => Console.WriteLine(i.Name));
         }
+        private struct indGroup
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+        }
     }
 
     public class Fruit
@@ -51,4 +58,6 @@ namespace ConsoleApp
     {
         public Apple() => this.Name = "Apple";
     }
+
+    
 }
