@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Domain.Implement
 {
@@ -16,7 +18,27 @@ namespace Domain.Implement
 		{
 			
 		}
-		public Result<List<WeatherForecastOutput>> Test(TestInput input)
+
+        public Task<WeatherForecastOutput> GetByIdAsync(int id, CancellationToken token=default)
+        {
+			try
+			{
+				var res = new WeatherForecastOutput
+				{
+					Id = Guid.NewGuid().GetHashCode(),
+					Date = DateTime.Now
+				};
+
+				return Task.FromResult(res);
+			}
+			catch (Exception e)
+			{
+				_logger.LogError(e, e.Message);
+				throw e;
+			}
+		}
+
+        public Result<List<WeatherForecastOutput>> Test(TestInput input)
         {
 			try
 			{

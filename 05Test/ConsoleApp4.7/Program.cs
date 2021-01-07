@@ -3,6 +3,7 @@ using ConsoleApp4._7.test;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -530,7 +531,11 @@ namespace ConsoleApp4._7
             //Console.WriteLine(listP.Contains(p2));
             //Console.WriteLine(p1.IsEqual(p2));
 
-            deadlock.Test();
+            //deadlock.Test();
+
+
+            var t = "".Substring(0, 2);
+
 
             Console.WriteLine();
             Console.ReadKey();

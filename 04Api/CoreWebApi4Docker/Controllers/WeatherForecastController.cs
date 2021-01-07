@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Domain.Implement;
 using Domain.Interface;
@@ -20,9 +21,11 @@ namespace CoreWebApi4Docker.Controllers
     public class WeatherForecastController : ApiControllerBase
     {
         private readonly IWeatherForecastService _service;
+        ILogger<WeatherForecastController> _logger;
         public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForecastService service)
         {
             _service = service;
+            _logger = logger;
         }
 
         /// <summary>
@@ -48,6 +51,27 @@ namespace CoreWebApi4Docker.Controllers
         public Result<List<WeatherForecastOutput>> Add([FromBody]TestInput input)
         {
             return _service.Test(input);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="token">浏览器取消请求时，服务端会将 HttpContext.RequestAborted 中的 Token 绑定到 Action 的 CancellationToken 参数。
+        /// 我们只需在接口中增加参数 CancellationToken，并将其传入其他接口调用中，程序识别到令牌被取消就会自动放弃继续执行</param>
+        /// <returns></returns>
+        public async Task<WeatherForecastOutput> GetByIdAsync(int id,CancellationToken token)
+        {
+            var res = new WeatherForecastOutput();
+            try
+            {
+                await _service.GetByIdAsync(id, token);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+            }
+            return res;
         }
     }
 }
