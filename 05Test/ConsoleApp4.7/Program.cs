@@ -21,7 +21,7 @@ namespace ConsoleApp4._7
             //TaskClass.GetTestRes();
             //Console.WriteLine("flag");
             //Console.WriteLine($"AthreadId=" + Thread.CurrentThread.ManagedThreadId);
-            //test();
+            //Demo1.test();
 
             //Console.WriteLine($"AthreadId=" + Thread.CurrentThread.ManagedThreadId);
             //Console.ReadKey();
@@ -31,12 +31,6 @@ namespace ConsoleApp4._7
             Console.ReadKey();
         }
 
-        private async static void test()
-        {
-            Console.WriteLine($"threadId=" + Thread.CurrentThread.ManagedThreadId);
-            //只有await+task的时候才会新开线程并当前主线程推出方法，这里不会
-            await Demo1.GetResAsync("ddd");
-            Console.WriteLine($"threadId=" + Thread.CurrentThread.ManagedThreadId);
-        }
+        
     }
 }

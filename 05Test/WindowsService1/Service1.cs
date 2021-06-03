@@ -6,9 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace WindowsServiceTraditional
+namespace WindowsService1
 {
     public partial class Service1 : ServiceBase
     {

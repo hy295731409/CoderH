@@ -198,7 +198,6 @@
     <Compile Include="Task\TaskClass.cs" />
     <Compile Include="Task\Demo1.cs" />
     <Compile Include="test\deadlock.cs" />
-    <Compile Include="test\MedRecord.cs" />
     <Compile Include="Web References\WebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

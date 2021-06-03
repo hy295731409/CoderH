@@ -50,7 +50,8 @@ namespace ConsoleApp4._7.WebServiceClient
                 }
             }
             ms.Close();
-            
+            content.Dispose();
+
             Console.WriteLine(res3);
         }
     }
