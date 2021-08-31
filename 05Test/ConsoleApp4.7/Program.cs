@@ -26,11 +26,17 @@ namespace ConsoleApp4._7
             //Console.WriteLine($"AthreadId=" + Thread.CurrentThread.ManagedThreadId);
             //Console.ReadKey();
 
-            WebServiceTest.Test();
+            //WebServiceTest.Test();
 
+            //var test = new Test();
+            //test.GetTest();
+
+            var demo = new XPath();
+            demo.demo();
             Console.ReadKey();
         }
 
-        
     }
+
+    
 }

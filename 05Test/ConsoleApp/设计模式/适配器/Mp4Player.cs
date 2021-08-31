@@ -4,6 +4,9 @@ using System.Text;
 
 namespace ConsoleApp.设计模式.适配器
 {
+    /// <summary>
+    /// mp4播放器
+    /// </summary>
     class Mp4Player : IAdvancedMediaPlayer
     {
         public void playMp4(string fileName)

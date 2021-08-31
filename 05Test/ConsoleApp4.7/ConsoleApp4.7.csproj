@@ -194,10 +194,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SequenceDagramConfig.cs" />
     <Compile Include="Task\TaskClass.cs" />
     <Compile Include="Task\Demo1.cs" />
+    <Compile Include="test\Test.cs" />
     <Compile Include="test\deadlock.cs" />
+    <Compile Include="test\XPath.cs" />
     <Compile Include="Web References\WebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
