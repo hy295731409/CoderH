@@ -24,9 +24,10 @@ namespace WechatClockWinServer
 
         public static void CheckTime()
         {
-            var now = DateTime.Now.TimeOfDay;
-            var iNow = (int)now.TotalMinutes;
-            if (iNow == (int)morning.TotalMinutes || iNow == (int)afternoon.TotalMinutes)
+            var now = DateTime.Now;
+            var weekDay = now.DayOfWeek;
+            var iNow = (int)now.TimeOfDay.TotalMinutes;
+            if (weekDay != DayOfWeek.Saturday && weekDay != DayOfWeek.Sunday && (iNow == (int)morning.TotalMinutes || iNow == (int)afternoon.TotalMinutes))
                 MainTest();
         }
 

@@ -25,10 +25,15 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="log4net" Version="2.0.12" />
   </ItemGroup>
   
   <ItemGroup>
     <Folder Include="Protos\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\01Framework\SocketManager\SocketManager.csproj" />
   </ItemGroup>
 
 </Project>

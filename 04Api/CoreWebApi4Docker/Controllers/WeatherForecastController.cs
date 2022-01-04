@@ -73,5 +73,13 @@ namespace CoreWebApi4Docker.Controllers
             }
             return res;
         }
+
+        [HttpGet,Route("ViewTest")]
+        public IActionResult ViewTest()
+        {
+            var ret = new ViewResult();
+            ret.ViewName = "ViewTest";
+            return ret;
+        }
     }
 }
