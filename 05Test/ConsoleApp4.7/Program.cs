@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -36,7 +37,7 @@ namespace ConsoleApp4._7
 
             //var demo = new XPath();
             //demo.demo();
-
+            //new List<string>().GetType().GetTypeInfo().GetDeclaredMethod("MethodName").Invoke(obj, yourArgsHere);
             GetData();
 
             Console.ReadKey();

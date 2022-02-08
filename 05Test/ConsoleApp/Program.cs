@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -60,16 +61,21 @@ namespace ConsoleApp
             //res = cache.Get(3);
             //res = cache.Get(4);
 
-            LoopQueue<string> queue = new LoopQueue<string>(5);
-            queue.Add("a");
-            queue.Add("b");
-            queue.Add("c");
-            queue.Add("d");
-            queue.Add("e");//full
-            queue.Remove();
-            queue.Remove();
-            queue.Remove();
-            queue.Add("e");
+            //LoopQueue<string> queue = new LoopQueue<string>(5);
+            //queue.Add("a");
+            //queue.Add("b");
+            //queue.Add("c");
+            //queue.Add("d");
+            //queue.Add("e");//full
+            //queue.Remove();
+            //queue.Remove();
+            //queue.Remove();
+            //queue.Add("e");
+
+            // MinWindow.MINSTRING();
+            var arr = new[] { 5, 3, 4, 9, 2, 10, 6 };
+            //arr.GetType().GetTypeInfo().GetDeclaredMethod("MethodName").Invoke(obj, yourArgsHere);
+            SortDemo.qs(arr, 0, 6);
 
             Console.ReadLine();
         }
