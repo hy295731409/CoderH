@@ -194,6 +194,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Task\Demo2.cs" />
     <Compile Include="Task\TaskClass.cs" />
     <Compile Include="Task\Demo1.cs" />
     <Compile Include="test\Test.cs" />

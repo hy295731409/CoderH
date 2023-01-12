@@ -6,6 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Study\CoreWebApi4Docker\CoreWebApi4Docker\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Study\Study\ASP.NET\CoderH\04Api\CoreWebApi4Docker\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>False|2022-09-19T05:11:29.8715837Z;False|2022-09-19T10:54:58.3806433+08:00;False|2022-09-19T10:52:42.2166781+08:00;False|2022-09-19T10:52:00.2293843+08:00;</History>
   </PropertyGroup>
 </Project>

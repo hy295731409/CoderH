@@ -10,12 +10,12 @@ namespace ConsoleApp4._7.TaskDemo
     public class Demo1
     {
 
-        private async static void test()
+        public async static void test()
         {
-            Console.WriteLine($"threadId=" + Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine($"threadId=" + Thread.CurrentThread.ManagedThreadId);//1
             //只有await+task的时候才会新开线程并当前主线程推出方法，这里不会
             await Demo1.GetResAsync("ddd");
-            Console.WriteLine($"threadId=" + Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine($"threadId=" + Thread.CurrentThread.ManagedThreadId);//3
         }
 
 

@@ -18,7 +18,7 @@ namespace WechatClockWinServer
         private const string AppSecret = "kT1JLQgfFGoYV7xDB1UKnjBceeVhxvAGxpe0gR2jHQI";
         private const string ToUid = "@all";
         private static readonly TimeSpan morning = new TimeSpan(8, 55, 0);
-        private static readonly TimeSpan afternoon = new TimeSpan(17, 29, 0);
+        private static readonly TimeSpan afternoon = new TimeSpan(18, 05, 0);
         private static HttpClient client = new HttpClient();
         private Timer timer = new Timer();
 
@@ -41,17 +41,17 @@ namespace WechatClockWinServer
                 var accessToken = jObj.Value<string>("access_token");
                 
                 var sendMessageUrl = $"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={accessToken}";
-                //var data = new
-                //{
-                //    touser = ToUid,
-                //    msgtype = "text",
-                //    agentid = AppId,
-                //    text = new { content = $"准备打卡 over！！！ {DateTime.Now:yyyy-MM-dd HH:mm:ss}" }
-                //};
-                //var str = JsonConvert.SerializeObject(data);
+                var data = new
+                {
+                    touser = ToUid,
+                    msgtype = "text",
+                    agentid = AppId,
+                    text = new { content = $"准备打卡 over！！！ {DateTime.Now:yyyy-MM-dd HH:mm:ss}" }
+                };
+                var str = JsonConvert.SerializeObject(data);
 
-                var str = "{\"touser\":\"@all\",\"msgtype\":\"text\",\"agentid\":\"1000002\",\"text\":{\"content\":\"准备打卡 over！！！ "+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") +"\"}}";
-                
+                //var str = "{\"touser\":\"@all\",\"msgtype\":\"text\",\"agentid\":\"1000002\",\"text\":{\"content\":\"准备打卡 over！！！ " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") +"\"}}";
+
                 var buffer = Encoding.UTF8.GetBytes(str);
                 var ms = new MemoryStream(buffer);
                 var content = new StreamContent(ms);
