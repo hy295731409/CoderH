@@ -75,7 +75,7 @@ namespace ConsoleApp
             // MinWindow.MINSTRING();
             var arr = new[] { 5, 3, 4, 9, 2, 10, 6 };
             //arr.GetType().GetTypeInfo().GetDeclaredMethod("MethodName").Invoke(obj, yourArgsHere);
-            SortDemo.qs(arr, 0, 6);
+           // SortDemo.qs(arr, 0, 6);
 
             Console.ReadLine();
         }

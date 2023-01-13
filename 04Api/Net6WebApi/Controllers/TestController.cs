@@ -1,17 +1,22 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Net6WebApi.Config;
+using Net6WebApi.Entity;
 using Newtonsoft.Json;
 
 namespace Net6WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class TestController : ControllerBase
     {
         private readonly ILogger<TestController> _logger;
-        public TestController(ILogger<TestController> logger)
+        private readonly SqlServerContext dbContext;
+
+        public TestController(ILogger<TestController> logger, SqlServerContext dbContext)
         {
             _logger = logger;
+            this.dbContext = dbContext;
         }
         // GET: Test
         //public ActionResult Index()
@@ -19,11 +24,12 @@ namespace Net6WebApi.Controllers
         //    return View();
         //}
 
-        //// GET: Test/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
+        // GET: Test/Details/5
+        [HttpGet]
+        public Book Details(int id)
+        {
+            return dbContext.Book.Where(x => x.Id == id).FirstOrDefault();
+        }
 
         //// GET: Test/Create
         //public ActionResult Create()
