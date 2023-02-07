@@ -25,17 +25,57 @@ namespace ConsoleApp4._7.TaskDemo
         {
             Console.WriteLine("ThreadId3=" + Thread.CurrentThread.ManagedThreadId);
             Console.WriteLine("Func1 proccess - start");
-            await fun2Async();
+            await fun2Async(); //加await的话，当前线程会等方法执行完成才走下一步,这个方法的后续都由新线程执行
+            //fun2Async();         //不加waait，线程会继续往下执行，后续都有原线程执行
             Console.WriteLine("Func1 proccess - end");
             Console.WriteLine("ThreadId4=" + Thread.CurrentThread.ManagedThreadId);
         }
 
-        static Task fun2Async()
+        static async Task fun2Async()
         {
             Console.WriteLine("ThreadId5=" + Thread.CurrentThread.ManagedThreadId);
             Console.WriteLine("Func2 proccess - start");
-            Task.Delay(10000);
-            return Task.CompletedTask;
+            await new TaskFactory().StartNew(() =>
+            {
+                Console.WriteLine("ThreadId6=" + Thread.CurrentThread.ManagedThreadId);
+                Thread.Sleep(10000);
+                Console.WriteLine("ThreadId7=" + Thread.CurrentThread.ManagedThreadId);
+            });
+            Console.WriteLine("Func2 proccess - end");
+            Console.WriteLine("ThreadId8=" + Thread.CurrentThread.ManagedThreadId);
+            //return Task.CompletedTask;
+        }
+
+        public static async Task fun3()
+        {
+            try
+            {
+                var taskFactory = new TaskFactory();
+                var timeOut = TimeSpan.FromSeconds(5);
+                using (var cancellationTokenSource = new CancellationTokenSource())
+                {
+                    var playTask = await taskFactory.StartNew(async () =>
+                    {
+                        await Task.Delay(1000 * 20);
+                        Console.WriteLine("ok");
+                    }, cancellationTokenSource.Token);
+                    //var playTask = socket.Play(uuid, voiceFile);
+                    //var delayTask = Task.Delay(timeOut, cancellationTokenSource.Token);
+                    var completedTask = await Task.WhenAny(playTask, Task.Delay(timeOut, cancellationTokenSource.Token));
+                    if (completedTask != playTask)
+                    {
+                        Console.WriteLine("任务超时了");
+                        //谁先谁后？
+                        //await socket.Hangup(uuid, HangupCause.CallRejected);
+                        cancellationTokenSource.Cancel();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw new TimeoutException("播放语音超时");
+            }
         }
     }
 }

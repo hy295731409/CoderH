@@ -26,8 +26,8 @@ namespace ConsoleApp4._7
             //Console.WriteLine("flag");
             //Console.WriteLine($"AthreadId=" + Thread.CurrentThread.ManagedThreadId);
             //Demo1.test();
-            Demo2.testAsync();
-            Console.WriteLine("出来了");
+            //await Demo2.testAsync();
+            //Console.WriteLine("出来了");
             //Console.WriteLine($"AthreadId=" + Thread.CurrentThread.ManagedThreadId);
             //Console.ReadKey();
 
@@ -47,6 +47,7 @@ namespace ConsoleApp4._7
             //tup.Add(new Tuple<string, List<Person>>("p3.1",new List<Person>() { new Person() { Name="p3,1"} }));
             //var res = tup.SelectMany(s => s.Item2).ToList();
 
+            Demo2.fun3();
             Console.ReadKey();
         }
         
